@@ -88,6 +88,6 @@ public class Player {
 	     }
   
   public int getMaxScore() {
-  	  return getMaxScore();
+  	  return g_maxScore;
     }
 }

@@ -4,7 +4,7 @@ public class RulesFactory {
 	
   //private Rules.HitRules hitRules = Rules.HitRules.basic;
   private Rules.HitRules hitRules = Rules.HitRules.soft17;
-  private Rules.WinRules winRules = Rules.WinRules.dealerTakesDraw;
+  private Rules.WinRules winRules = Rules.WinRules.playerTakesDraw;
   
   public IHitStrategy GetHitRule() {
     if (hitRules == Rules.HitRules.soft17){
