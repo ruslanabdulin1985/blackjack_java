@@ -12,6 +12,10 @@ public class SwedishView implements IView
             System.out.println("Skriv 'p' för att Spela, 'h' för nytt kort, 's' för att stanna 'q' för att avsluta\n");
         }
         
+        public boolean whantsToPlay() {
+        	return true;
+        }
+        
         public int GetInput()
         {
           try {
@@ -72,4 +76,29 @@ public class SwedishView implements IView
             System.out.println("Poäng: " + a_score);
             System.out.println("");
         }
+
+		
+		@Override
+		public boolean whantsToPlay(int inp) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		@Override
+		public boolean whantsToPHit(int inp) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		@Override
+		public boolean whantsToStand(int inp) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		@Override
+		public boolean whantsToQuit(int inp) {
+			// TODO Auto-generated method stub
+			return false;
+		}
     }

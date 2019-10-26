@@ -18,19 +18,30 @@ public class PlayGame {
 
     int input = a_view.GetInput();
     
-    if (input == 'p')
-    {
-        a_game.NewGame();
+    if (a_view.whantsToPlay(input)) {
+    	a_game.NewGame();
     }
-    else if (input == 'h')
+//    
+    else if (a_view.whantsToPHit(input))
     {
         a_game.Hit();
     }
-    else if (input == 's')
+    
+    else if (a_view.whantsToStand(input))
     {
-        a_game.Stand();
+    	 a_game.Stand();
     }
-
-    return input != 'q';
+//    else if (input == 'h')
+//    {
+//        a_game.Hit();
+//    }
+//    else if (input == 's')
+//    {
+//       
+//    }
+//
+    
+    return !a_view.whantsToQuit(input);
+//    	return input != 'q';
   }
 }

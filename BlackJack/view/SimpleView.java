@@ -9,6 +9,22 @@ public class SimpleView implements IView
           System.out.println("Hello Black Jack World");
           System.out.println("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit\n");
         }
+  
+  		public boolean whantsToPlay(int inp) {
+  			return inp == 'p';
+  		}
+  		
+  		public boolean whantsToPHit(int inp) {
+  			return inp == 'h';
+  		}
+  		
+  		public boolean whantsToStand(int inp) {
+  			return inp == 's';
+  		}
+  		
+  		public boolean whantsToQuit(int inp) {
+  			return inp == 'q';
+  		}
 
         public int GetInput()
         {
