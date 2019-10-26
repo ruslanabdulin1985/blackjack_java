@@ -5,6 +5,7 @@ public class RulesFactory {
   //private Rules.HitRules hitRules = Rules.HitRules.basic;
   private Rules.HitRules hitRules = Rules.HitRules.soft17;
   private Rules.WinRules winRules = Rules.WinRules.playerTakesDraw;
+  private Rules.GameRules gameRules = Rules.GameRules.InternationalGame;
   
   public IHitStrategy GetHitRule() {
     if (hitRules == Rules.HitRules.soft17){
@@ -15,9 +16,11 @@ public class RulesFactory {
    	return new BasicHitStrategy();
   }
   
-
   public INewGameStrategy GetNewGameRule() {
-    return new AmericanNewGameStrategy();
+	  if (gameRules == Rules.GameRules.AmericanGame)
+		  return new AmericanNewGameStrategy();
+	  else
+		  return new InternationalNewGameStrategy();
   }
 
 

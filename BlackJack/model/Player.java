@@ -38,7 +38,7 @@ public class Player {
     }
   }
   
- 
+
   
   public int CalcScore()
   {
@@ -73,10 +73,11 @@ public class Player {
             }
         }
     }
-    
 
     return score;
   }
+
+
   
   public boolean HasAce() {
 	   	 for(Card c : GetHand())

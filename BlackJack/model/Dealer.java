@@ -15,10 +15,6 @@ public class Dealer extends Player {
     m_hitRule = a_rulesFactory.GetHitRule();
     m_winRule = a_rulesFactory.GetWinRule();
     
-    /*for(Card c : m_deck.GetCards()) {
-      c.Show(true);
-      System.out.println("" + c.GetValue() + " of " + c.GetColor());
-    }    */
   }
   
 
@@ -26,25 +22,27 @@ public class Dealer extends Player {
   public boolean NewGame(Player a_player) {
     if (m_deck == null || IsGameOver()) {
       m_deck = new Deck();
-      ClearHand();
+      this.ClearHand();
       a_player.ClearHand();
       return m_newGameRule.NewGame(m_deck, this, a_player);   
     }
     return false;
   }
   
-  public boolean Stand() {
+  public boolean DealNewCard(Player a_player, boolean isVisible) {
+	  Deck m_deck = this.getDeck();
+	  Card c = m_deck.GetCard();
+	  c.Show(isVisible);
+	  a_player.DealCard(c);
+	  return true;
+  }  
+  
+  public boolean Stand(Player a_player) {
 	  if (m_deck != null) {
 		  this.ShowHand();
-		  for (Card c : this.GetHand()) {
-			c.Show(true);
-		  }
-		  
+
 		  while (m_hitRule.DoHit(this)){
-			 Card c =  m_deck.GetCard();
-			 c.Show(true);
-			 this.DealCard(c);
-			 
+			  DealNewCard(this, true);
 		  }
 		  
 		  return true;
@@ -54,22 +52,20 @@ public class Dealer extends Player {
 
   public boolean Hit(Player a_player) {
     if (m_deck != null && a_player.CalcScore() < g_maxScore && !IsGameOver()) {
-      Card c;
-      c = m_deck.GetCard();
-      c.Show(true);
-      a_player.DealCard(c);
-      
-      return true;
+    	DealNewCard(a_player, true);
+    	return true;
     }
     return false;
+  }
+  
+  public Deck getDeck() {
+	  return m_deck;
   }
 
   public boolean IsDealerWinner(Player a_player) {
 	return m_winRule.DealerWon(this, a_player);
   }
   
- 
-
   public boolean IsGameOver() {
     if (m_deck != null && m_hitRule.DoHit(this) != true) {
         return true;

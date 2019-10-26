@@ -12,3 +12,6 @@
 /PlayerWinsDrawStrategy.class
 /IDrawStrategy.class
 /Rules$WinRules.class
+/CardVisibility.class
+/CardVisibility$vivibility.class
+/Rules$GameRules.class

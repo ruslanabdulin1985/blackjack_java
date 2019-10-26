@@ -11,4 +11,8 @@ public class Rules {
 			dealerTakesDraw
 		}
 		
+		enum GameRules{
+			AmericanGame,
+			InternationalGame
+		}
 }
