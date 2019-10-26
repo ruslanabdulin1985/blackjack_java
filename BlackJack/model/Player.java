@@ -12,7 +12,7 @@ public class Player {
   {
   
     m_hand = new LinkedList<Card>();
-    System.out.println("Hello List World");
+
   }
   
   public void DealCard(Card a_addToHand)
@@ -38,6 +38,8 @@ public class Player {
     }
   }
   
+ 
+  
   public int CalcScore()
   {
     // the number of scores is dependant on the number of scorable values
@@ -57,6 +59,8 @@ public class Player {
             score += cardScores[c.GetValue().ordinal()];
         }
     }
+    
+   
 
     if (score > g_maxScore)
     {
@@ -68,7 +72,17 @@ public class Player {
             }
         }
     }
+    
 
     return score;
   }
+  
+  public boolean HasAce() {
+	   	 for(Card c : GetHand())
+	        {
+	   		 if (c.GetValue() == Card.Value.Ace)
+	   			 return true;
+	        }
+	   	 return false;
+	     }
 }
