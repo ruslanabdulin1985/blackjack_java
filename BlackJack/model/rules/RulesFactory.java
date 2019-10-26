@@ -1,14 +1,29 @@
 package BlackJack.model.rules;
 
 public class RulesFactory {
+	  private RulesOptions.HitRules hitRules;
+	  private RulesOptions.WinRules winRules;
+	  private RulesOptions.GameRules gameRules;
+	  
 	
-  //private Rules.HitRules hitRules = Rules.HitRules.basic;
-  private Rules.HitRules hitRules = Rules.HitRules.soft17;
-  private Rules.WinRules winRules = Rules.WinRules.playerTakesDraw;
-  private Rules.GameRules gameRules = Rules.GameRules.InternationalGame;
-  
+	public RulesFactory() { // default rules factory
+		  this.hitRules = RulesOptions.HitRules.soft17;
+		  this.winRules = RulesOptions.WinRules.playerTakesDraw;
+		  this.gameRules = RulesOptions.GameRules.InternationalGame;
+	}
+	
+	public RulesFactory(RulesOptions.HitRules f_HitRules, RulesOptions.WinRules f_WinRules, RulesOptions.GameRules f_GameRules) {
+		this.hitRules = f_HitRules;
+		  this.winRules = f_WinRules;
+		  this.gameRules = f_GameRules;
+	
+		
+	}
+	
+	
+
   public IHitStrategy GetHitRule() {
-    if (hitRules == Rules.HitRules.soft17){
+    if (hitRules == RulesOptions.HitRules.soft17){
     	System.out.println("Soft17Strategy in run");
 	  return new Soft17HitStrategy();
     }
@@ -17,7 +32,7 @@ public class RulesFactory {
   }
   
   public INewGameStrategy GetNewGameRule() {
-	  if (gameRules == Rules.GameRules.AmericanGame)
+	  if (gameRules == RulesOptions.GameRules.AmericanGame)
 		  return new AmericanNewGameStrategy();
 	  else
 		  return new InternationalNewGameStrategy();
@@ -25,7 +40,7 @@ public class RulesFactory {
 
 
 public IDrawStrategy GetWinRule() {
-	if (winRules == Rules.WinRules.dealerTakesDraw)
+	if (winRules == RulesOptions.WinRules.dealerTakesDraw)
 		return new DealerWinsDrawStrategy();
 	else
 		return new PlayerWinsDrawStrategy();

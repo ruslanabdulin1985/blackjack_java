@@ -1,17 +1,18 @@
 package BlackJack.model.rules;
 
-public class Rules {
-		enum HitRules{
+public class RulesOptions {
+	
+		public enum HitRules{
 			basic,
 			soft17
 		}
 		
-		enum WinRules{
+		public enum WinRules{
 			playerTakesDraw,
 			dealerTakesDraw
 		}
 		
-		enum GameRules{
+		public enum GameRules{
 			AmericanGame,
 			InternationalGame
 		}

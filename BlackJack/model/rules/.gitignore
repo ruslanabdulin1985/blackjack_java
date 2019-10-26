@@ -15,3 +15,8 @@
 /CardVisibility.class
 /CardVisibility$vivibility.class
 /Rules$GameRules.class
+/RulesOptions$GameRules.class
+/RulesOptions$HitRules.class
+/RulesOptions$WinRules.class
+/RulesOptions.class
+/RulesOptions$getHitRules.class
