@@ -16,7 +16,6 @@ public class Soft17HitStrategy implements IHitStrategy{
 	    return (a_dealer.CalcScore() < g_hitLimit) || this.Soft17(a_dealer);  
 		}
 		
-//		return false;
 }
 
 

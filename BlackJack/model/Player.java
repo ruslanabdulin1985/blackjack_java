@@ -61,6 +61,7 @@ public class Player {
     }
     
    
+   
 
     if (score > g_maxScore)
     {
@@ -85,4 +86,8 @@ public class Player {
 	        }
 	   	 return false;
 	     }
+  
+  public int getMaxScore() {
+  	  return getMaxScore();
+    }
 }

@@ -1,9 +1,13 @@
 package BlackJack.model.rules;
 
 public class RulesFactory {
-
-  public IHitStrategy GetHitRule(String HitRule) {
-    if (HitRule.equals("Soft17HitStrategy")){
+	
+  //private Rules.HitRules hitRules = Rules.HitRules.basic;
+  private Rules.HitRules hitRules = Rules.HitRules.soft17;
+  private Rules.WinRules winRules = Rules.WinRules.dealerTakesDraw;
+  
+  public IHitStrategy GetHitRule() {
+    if (hitRules == Rules.HitRules.soft17){
     	System.out.println("Soft17Strategy in run");
 	  return new Soft17HitStrategy();
     }
@@ -15,4 +19,12 @@ public class RulesFactory {
   public INewGameStrategy GetNewGameRule() {
     return new AmericanNewGameStrategy();
   }
+
+
+public IDrawStrategy GetWinRule() {
+	if (winRules == Rules.WinRules.dealerTakesDraw)
+		return new DealerWinsDrawStrategy();
+	else
+		return new PlayerWinsDrawStrategy();
+}
 }

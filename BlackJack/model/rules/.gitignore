@@ -5,3 +5,10 @@
 /InternationalNewGameStrategy.class
 /RulesFactory.class
 /Soft17HitStrategy.class
+/Rules.class
+/Rules$HitRules.class
+/INewDrawStrategy.class
+/DealerWinsDrawStrategy.class
+/PlayerWinsDrawStrategy.class
+/IDrawStrategy.class
+/Rules$WinRules.class
