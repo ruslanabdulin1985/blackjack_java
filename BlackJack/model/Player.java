@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.LinkedList;
 
 public class Player {
-
+	private List<Observer> observers;
   private List<Card> m_hand;
   protected final int g_maxScore = 21;
 
@@ -12,8 +12,19 @@ public class Player {
   {
   
     m_hand = new LinkedList<Card>();
+    observers = new LinkedList<Observer>();
 
   }
+  
+  public void attach(Observer obs) {
+	  this.observers.add(obs);
+  }
+  
+  public void notifyAllObservers(){
+      for (Observer observer : observers) {
+         observer.update();
+      }
+   } 	
   
   public void DealCard(Card a_addToHand)
   {
