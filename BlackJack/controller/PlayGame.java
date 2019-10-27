@@ -2,19 +2,20 @@ package BlackJack.controller;
 
 import BlackJack.view.IView;
 import BlackJack.model.Game;
-import BlackJack.model.NewCardObserver;
-import BlackJack.model.Observer;
 
 public class PlayGame {
 	
-	private IView g_view;
+	
+	Observer obs = new NewCardObserver();
 	
 	
-	public PlayGame(IView v) {
-		g_view = v;
-	}
 	
-  public boolean Play(Game a_game) {
+	
+  public boolean Play(Game a_game, IView g_view) {
+	  
+	  
+	  obs.addListner(g_view);
+	  a_game.attachObservers(obs);
 	  
 	  g_view.DisplayWelcomeMessage();
     
@@ -61,8 +62,7 @@ public class PlayGame {
   }
   
   public void updateView(Game a_game){
-	  g_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
-	  g_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());
+	  
   }
   
 }
