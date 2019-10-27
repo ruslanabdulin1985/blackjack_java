@@ -58,4 +58,8 @@ public class Card {
   public void Show(boolean a_show) {
       m_isHidden = !a_show;
   }
+  
+  public boolean isHidden() {
+	  return m_isHidden;
+  }
 }

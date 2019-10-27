@@ -9,11 +9,8 @@ public class PlayGame {
 	
 
 	
-  public boolean Play(Game a_game, IView g_view, Observer obs) {
-	  
-	  
-	  obs.addSubject(g_view);
-	  a_game.attachObservers(obs);
+  public boolean Play(Game a_game, IView g_view) {
+	 
 	  //g_view.DisplayGreetingMessage();
 	  g_view.DisplayWelcomeMessage();
     

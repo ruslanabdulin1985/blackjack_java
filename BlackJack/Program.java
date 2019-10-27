@@ -14,15 +14,19 @@ public class Program
 	
 	RulesFactory f = new RulesFactory(RulesOptions.HitRules.soft17, RulesOptions.WinRules.playerTakesDraw, RulesOptions.GameRules.AmericanGame);
     
-    IView v = new SimpleViewUsingObserver(); //new SwedishView();
+    IView v = new SimpleView(); //new SwedishView();
 
     Game g = new Game(f);
     Observer obs = new GameObserver(g);
     
+	  
     PlayGame ctrl = new PlayGame();
-
+    
+    obs.addSubject(v);
+	g.attachObservers(obs);
+	  
 
     
-    while (ctrl.Play(g, v, obs));
+    while (ctrl.Play(g, v));
   }
 }

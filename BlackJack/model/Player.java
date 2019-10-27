@@ -48,7 +48,11 @@ public class Player {
   {
     for(Card c : GetHand())
     {
-      c.Show(true);
+    	if (c.isHidden()) {
+    		c.Show(true);
+    		this.notifyAllObservers();
+    		
+    	}
     }
   }
   

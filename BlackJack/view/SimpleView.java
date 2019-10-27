@@ -5,12 +5,19 @@ public class SimpleView implements IView
 
   public void DisplayWelcomeMessage()
         {
-          for(int i = 0; i < 50; i++) {System.out.print("\n");}; 
-          System.out.println("Hello Black Jack World");
+//           
+          System.out.println("Dealer : 'We are ready, you can make your move'");
           System.out.println("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit\n");
         }
   
+  public void DisplayGreetingMessage() {
+	  System.out.println("Welcome to Fancy BlackJack!");
+  }
   
+  		public boolean DisplayEmptySpace() {
+  			for(int i = 0; i < 50; i++) {System.out.print("\n");}
+  			return true;
+  		}
   		public boolean whantsToPlay(int inp) {
   			return inp == 'p';
   		}
@@ -71,41 +78,35 @@ public class SimpleView implements IView
         {
             System.out.println("GameOver: ");
             if (a_dealerIsWinner)
-            {
+            {	
                 System.out.println("Dealer Won!");
+                System.out.println("Type 'p' to play again");
             }
             else
             {
+            	
                 System.out.println("You Won!");
+                System.out.println("Type 'p' to play again");
             }
             
         }
 
-
-		@Override
-		public boolean DisplayEmptySpace() {
-			// TODO Auto-generated method stub
-			return false;
-		}
-
-
 		@Override
 		public boolean Sleep() {
-			// TODO Auto-generated method stub
-			return false;
+			 try {
+				Thread.sleep(2000);
+				return true;
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return false;
+			}
+			 
 		}
-
 
 		@Override
 		public boolean DisplayPausingMessage() {
-			// TODO Auto-generated method stub
+			System.out.println("Dealer: 'Hold on a second, I am dealing cards'");
 			return false;
-		}
-
-
-		@Override
-		public void DisplayGreetingMessage() {
-			// TODO Auto-generated method stub
-			
 		}
     }
