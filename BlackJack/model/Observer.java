@@ -1,7 +1,9 @@
 package BlackJack.model;
 
+import BlackJack.controller.PlayGame;
+
 public abstract class Observer {
-	protected Player a_player;
+	protected PlayGame pg;
 	public abstract void update();
 	
 }

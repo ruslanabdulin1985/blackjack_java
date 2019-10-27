@@ -1,20 +1,24 @@
 package BlackJack.model;
 
 import BlackJack.model.rules.RulesFactory;
+import BlackJack.view.IView;
 
 public class Game {
 
   private Dealer m_dealer;
   private Player m_player;
-  private Observer m_obs;
+  
 
   public Game(RulesFactory f)
   {
     m_dealer = new Dealer(f);
     m_player = new Player();
-    m_obs = new NewCardObserver(m_dealer);
+   
   }
-    
+   
+  public void attachObservers(Observer o){
+	  m_dealer.attach(o);
+  }
     
   public boolean IsGameOver()
   {

@@ -2,32 +2,43 @@ package BlackJack.controller;
 
 import BlackJack.view.IView;
 import BlackJack.model.Game;
+import BlackJack.model.NewCardObserver;
+import BlackJack.model.Observer;
 
 public class PlayGame {
-
-  public boolean Play(Game a_game, IView a_view) {
-    a_view.DisplayWelcomeMessage();
+	
+	private IView g_view;
+	
+	
+	public PlayGame(IView v) {
+		g_view = v;
+	}
+	
+  public boolean Play(Game a_game) {
+	  
+	  g_view.DisplayWelcomeMessage();
     
-    a_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
-    a_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());
+    
+	  g_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
+	  g_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());
 
     if (a_game.IsGameOver())
     {
-        a_view.DisplayGameOver(a_game.IsDealerWinner());
+    	g_view.DisplayGameOver(a_game.IsDealerWinner());
     }
 
-    int input = a_view.GetInput();
+    int input = g_view.GetInput();
     
-    if (a_view.whantsToPlay(input)) {
+    if (g_view.whantsToPlay(input)) {
     	a_game.NewGame();
     }
 //    
-    else if (a_view.whantsToPHit(input))
+    else if (g_view.whantsToPHit(input))
     {
         a_game.Hit();
     }
     
-    else if (a_view.whantsToStand(input))
+    else if (g_view.whantsToStand(input))
     {
     	 a_game.Stand();
     }
@@ -41,7 +52,17 @@ public class PlayGame {
 //    }
 //
     
-    return !a_view.whantsToQuit(input);
+    return !g_view.whantsToQuit(input);
 //    	return input != 'q';
   }
+  
+  public void NeedsUpdateScreen() {
+	  System.out.println("NeedsUpdateScreen"); 
+  }
+  
+  public void updateView(Game a_game){
+	  g_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
+	  g_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());
+  }
+  
 }
