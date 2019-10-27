@@ -6,22 +6,20 @@ import BlackJack.model.Game;
 public class PlayGame {
 	
 	
-	Observer obs = new NewCardObserver();
 	
+
 	
-	
-	
-  public boolean Play(Game a_game, IView g_view) {
+  public boolean Play(Game a_game, IView g_view, Observer obs) {
 	  
 	  
-	  obs.addListner(g_view);
+	  obs.addSubject(g_view);
 	  a_game.attachObservers(obs);
-	  
+	  //g_view.DisplayGreetingMessage();
 	  g_view.DisplayWelcomeMessage();
     
     
-	  g_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
-	  g_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());
+	  //g_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
+	  //g_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());
 
     if (a_game.IsGameOver())
     {

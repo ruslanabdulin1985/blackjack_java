@@ -7,6 +7,10 @@ public interface IView
   boolean whantsToPHit(int inp);
   boolean whantsToStand(int inp);
   boolean whantsToQuit(int inp);
+  public void DisplayGreetingMessage();
+  boolean DisplayEmptySpace();
+  boolean Sleep();
+  boolean DisplayPausingMessage();
   public int GetInput();
   void DisplayCard(BlackJack.model.Card a_card);
   void DisplayPlayerHand(Iterable<BlackJack.model.Card> a_hand, int a_score);

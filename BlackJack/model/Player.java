@@ -13,7 +13,6 @@ public class Player {
 
   public Player()
   {
-  
     m_hand = new LinkedList<Card>();
     observers = new LinkedList<Observer>();
 
@@ -25,6 +24,7 @@ public class Player {
   
   public void notifyAllObservers(){
       for (Observer observer : observers) {
+    	 
          observer.update();
       }
    } 	

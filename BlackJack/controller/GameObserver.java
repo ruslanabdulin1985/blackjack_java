@@ -1,25 +1,32 @@
 package BlackJack.controller;
 
 import BlackJack.view.IView;
+import BlackJack.view.SimpleView;
+import BlackJack.model.Player;
+import BlackJack.model.Game;
 
-public class NewCardObserver extends Observer {
-	public NewCardObserver() {
-			
+public class GameObserver extends Observer {
+	public GameObserver(Game o_game) {
+			game=o_game;
 	   }
 	
 		//
-	   @Override
 	   public void update() {
-		   System.out.println("Yahoo!");
+		  
+		  IView o_view = (IView)o_subject;
+		  o_view.DisplayPausingMessage();
+		  o_view.Sleep();
+		  o_view.DisplayEmptySpace();
+		  o_view.DisplayDealerHand(game.GetDealerHand(), game.GetDealerScore());
+		  o_view.DisplayDealerHand(game.GetPlayerHand(), game.GetPlayerScore());
+		  
 	   }
-
-
-	public void addListner(IView v) {
-		o = v;
-	}
+	   
 
 	@Override
-	public void addListner(Object o) {
-		
+	public void addSubject(IView v) {
+		o_subject = v;
 	}
+
+
 }

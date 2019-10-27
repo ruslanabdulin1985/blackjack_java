@@ -4,9 +4,9 @@ import BlackJack.view.IView;
 import BlackJack.model.Game;
 
 public abstract class Observer {
-	
-	protected PlayGame pg;
-	protected Object o;
+	protected Object o_subject;
+	protected Game game;
 	public abstract void update();
-	public abstract void addListner(Object o);
+	//public abstract void addSubject(Object o);
+	public abstract void addSubject(IView v);
 }

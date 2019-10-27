@@ -24,7 +24,7 @@ public class RulesFactory {
 
   public IHitStrategy GetHitRule() {
     if (hitRules == RulesOptions.HitRules.soft17){
-    	System.out.println("Soft17Strategy in run");
+    	
 	  return new Soft17HitStrategy();
     }
     System.out.println("BasicHitStrategy in run");

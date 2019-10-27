@@ -1,3 +1,6 @@
 /PlayGame.class
 /NewCardObserver.class
 /Observer.class
+/NewPlayerObserver.class
+/NewGameObserver.class
+/GameObserver.class

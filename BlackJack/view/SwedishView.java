@@ -101,4 +101,28 @@ public class SwedishView implements IView
 			// TODO Auto-generated method stub
 			return false;
 		}
+
+		@Override
+		public boolean DisplayEmptySpace() {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		@Override
+		public boolean Sleep() {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		@Override
+		public boolean DisplayPausingMessage() {
+			System.out.println("Jag kan into svenska");
+			return true;
+		}
+
+		@Override
+		public void DisplayGreetingMessage() {
+			// TODO Auto-generated method stub
+			
+		}
     }
