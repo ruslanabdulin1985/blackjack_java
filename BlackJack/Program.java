@@ -3,7 +3,8 @@ package BlackJack;
 import BlackJack.model.Game;
 import BlackJack.model.GameObserver;
 import BlackJack.model.Observer;
-import BlackJack.model.rules.RulesFactory;
+import BlackJack.model.rules.BasicAmericanDealerFactory;
+import BlackJack.model.rules.IRulesFactory;
 import BlackJack.view.*;
 import BlackJack.controller.*;
 import BlackJack.model.rules.RulesOptions;
@@ -14,7 +15,7 @@ public class Program
   public static void main(String[] a_args)
   {
 	
-	RulesFactory f = new RulesFactory(RulesOptions.HitRules.soft17, RulesOptions.WinRules.playerTakesDraw, RulesOptions.GameRules.AmericanGame);
+	IRulesFactory f = new BasicAmericanDealerFactory();
     
     IView v = new SimpleView(); //new SwedishView();
 

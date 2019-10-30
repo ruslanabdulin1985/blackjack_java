@@ -20,3 +20,14 @@
 /RulesOptions$WinRules.class
 /RulesOptions.class
 /RulesOptions$getHitRules.class
+/AbstractRuleFactory.class
+/AbstracRulestFactory.class
+/AbstracRuleFactory.class
+/DrawRulesFactory.class
+/HitRuleFactory.class
+/AbstractRulesFactory.class
+/IRulesFactory.class
+/BasicAmericanDealerFactory.class
+/BasicEuropeanDealerStrategy.class
+/BasicEuropeanDealerFactory.class
+/Soft17AmericanPlayerFactory.class
