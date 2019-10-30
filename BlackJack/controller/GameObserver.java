@@ -13,13 +13,9 @@ public class GameObserver extends Observer {
 		//
 	   public void update() {
 		  
-		  IView o_view = (IView)o_subject;
-		  o_view.DisplayPausingMessage();
-		  o_view.Sleep();
-		  o_view.DisplayEmptySpace();
-		  o_view.DisplayDealerHand(game.GetDealerHand(), game.GetDealerScore());
-		  o_view.DisplayDealerHand(game.GetPlayerHand(), game.GetPlayerScore());
-		  
+		   IView o_view = (IView)o_subject;
+		   o_view.displayHands(game.GetDealerHand(), game.GetDealerScore(), game.GetPlayerHand(), game.GetPlayerScore());
+		   
 	   }
 	   
 

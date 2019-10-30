@@ -91,21 +91,27 @@ public class SimpleView implements IView
             
         }
 
-		@Override
-		public boolean Sleep() {
+		private boolean Wait(int ms_time) {
 			 try {
-				Thread.sleep(2000);
+				Thread.sleep(ms_time);
 				return true;
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				return false;
 			}
 			 
 		}
+		public boolean displayHands(Iterable<BlackJack.model.Card> dealer_hand, int dealer_score, Iterable<BlackJack.model.Card> player_hand, int player_score) {
+		
+		  this.DisplayPausingMessage();
+		  this.Wait(2000);
+		  this.DisplayEmptySpace();
+		  this.DisplayDealerHand(dealer_hand, dealer_score);
+		  this.DisplayDealerHand(player_hand, player_score);
+		  return true;
+		}
 
-		@Override
-		public boolean DisplayPausingMessage() {
+		private boolean DisplayPausingMessage() {
 			System.out.println("Dealer: 'Hold on a second, I am dealing cards'");
 			return false;
 		}

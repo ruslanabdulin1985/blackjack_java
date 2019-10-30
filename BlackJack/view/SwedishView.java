@@ -1,5 +1,7 @@
 package BlackJack.view;
 
+import BlackJack.model.Card;
+
 public class SwedishView implements IView 
     {
         public void DisplayWelcomeMessage()
@@ -102,27 +104,14 @@ public class SwedishView implements IView
 			return false;
 		}
 
+
+
+		
+
 		@Override
-		public boolean DisplayEmptySpace() {
+		public boolean displayHands(Iterable<Card> dealer_hand, int dealer_score, Iterable<Card> player_hand,
+				int player_score) {
 			// TODO Auto-generated method stub
 			return false;
-		}
-
-		@Override
-		public boolean Sleep() {
-			// TODO Auto-generated method stub
-			return false;
-		}
-
-		@Override
-		public boolean DisplayPausingMessage() {
-			System.out.println("Jag kan into svenska");
-			return true;
-		}
-
-		@Override
-		public void DisplayGreetingMessage() {
-			// TODO Auto-generated method stub
-			
 		}
     }
