@@ -1,7 +1,6 @@
-package BlackJack.controller;
+package BlackJack.model;
 
 import BlackJack.view.IView;
-import BlackJack.model.Game;
 
 public abstract class Observer {
 	protected Object o_subject;

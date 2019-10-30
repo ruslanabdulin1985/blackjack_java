@@ -1,6 +1,8 @@
 package BlackJack;
 
 import BlackJack.model.Game;
+import BlackJack.model.GameObserver;
+import BlackJack.model.Observer;
 import BlackJack.model.rules.RulesFactory;
 import BlackJack.view.*;
 import BlackJack.controller.*;

@@ -33,22 +33,10 @@ public class PlayGame {
     {
     	 a_game.Stand();
     }
-//    else if (input == 'h')
-//    {
-//        a_game.Hit();
-//    }
-//    else if (input == 's')
-//    {
-//       
-//    }
-//
+
     
     return !g_view.whantsToQuit(input);
-//    	return input != 'q';
-  }
-  
-  public void NeedsUpdateScreen() {
-	  System.out.println("NeedsUpdateScreen"); 
+
   }
   
   public void updateView(Game a_game){

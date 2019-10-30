@@ -8,12 +8,14 @@ public class Dealer extends Player {
   private INewGameStrategy m_newGameRule;
   private IHitStrategy m_hitRule;
   private IDrawStrategy m_winRule;
+ 
 
   public Dealer(RulesFactory a_rulesFactory) {
   
     m_newGameRule = a_rulesFactory.GetNewGameRule();
     m_hitRule = a_rulesFactory.GetHitRule();
-    m_winRule = a_rulesFactory.GetWinRule(); 
+    m_winRule = a_rulesFactory.GetWinRule();
+    
   }
   
   public boolean NewGame(Player a_player) {

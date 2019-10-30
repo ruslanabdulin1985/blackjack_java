@@ -1,6 +1,5 @@
 package BlackJack.model;
 
-import BlackJack.controller.Observer;
 import BlackJack.model.rules.RulesFactory;
 
 public class Game {
