@@ -2,6 +2,22 @@ package BlackJack.view;
 
 public class SimpleView implements IView 
 {
+	public SimpleView(){
+		
+		System.out.println(" _________ ");
+		System.out.println("|*        |");
+		System.out.println("|         |");
+		System.out.println("|   /\\    |");
+		System.out.println("|  /  \\   |");
+		System.out.println("| /----\\  |");
+		System.out.println("|/      \\ |");
+		System.out.println("|         |");
+		System.out.println(" ________* ");
+		System.out.println("  ");
+		System.out.println("Welcome to Fancy Black Jack !");
+		System.out.println("  ");
+		
+	}
 
   public void DisplayWelcomeMessage()
         {
@@ -10,9 +26,6 @@ public class SimpleView implements IView
           System.out.println("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit\n");
         }
   
-  public void DisplayGreetingMessage() {
-	  System.out.println("Welcome to Fancy BlackJack!");
-  }
   
   		public boolean DisplayEmptySpace() {
   			for(int i = 0; i < 50; i++) {System.out.print("\n");}

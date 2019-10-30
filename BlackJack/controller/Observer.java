@@ -7,6 +7,5 @@ public abstract class Observer {
 	protected Object o_subject;
 	protected Game game;
 	public abstract void update();
-	//public abstract void addSubject(Object o);
 	public abstract void addSubject(IView v);
 }

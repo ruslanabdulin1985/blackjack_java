@@ -1,8 +1,6 @@
 package BlackJack.controller;
 
 import BlackJack.view.IView;
-import BlackJack.view.SimpleView;
-import BlackJack.model.Player;
 import BlackJack.model.Game;
 
 public class GameObserver extends Observer {

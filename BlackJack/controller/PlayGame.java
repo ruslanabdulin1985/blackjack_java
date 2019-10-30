@@ -10,13 +10,8 @@ public class PlayGame {
 
 	
   public boolean Play(Game a_game, IView g_view) {
-	 
-	  //g_view.DisplayGreetingMessage();
-	  g_view.DisplayWelcomeMessage();
-    
-    
-	  //g_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
-	  //g_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());
+	  
+	g_view.DisplayWelcomeMessage();
 
     if (a_game.IsGameOver())
     {
